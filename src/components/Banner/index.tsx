@@ -26,8 +26,11 @@ const Banner = () => {
         loop
         className={ax["banner_swiper-wrapper"]}
       >
-        {BANNER_IMGS.map((src) => (
-          <SwiperSlide className={ax["banner_swiper-slide"]}>
+        {BANNER_IMGS.map((src, key) => (
+          <SwiperSlide
+            key={`swiper-image-${key}`}
+            className={ax["banner_swiper-slide"]}
+          >
             <img src={src}></img>
           </SwiperSlide>
         ))}
