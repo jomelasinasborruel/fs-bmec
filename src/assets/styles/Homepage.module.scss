@@ -1,0 +1,52 @@
+.homepage {
+  &_wrapper {
+    @apply w-full min-h-screen relative;
+    min-height: 100dvh;
+  }
+}
+
+.nav {
+  &_wrapper {
+    @apply h-20 w-full shadow-lg relative z-[10] flex justify-center items-center px-4;
+    @screen md {
+      @apply px-6;
+    }
+    @screen lg {
+      @apply px-8;
+    }
+  }
+
+  &_content {
+    @apply max-w-[90rem] w-full flex justify-between;
+  }
+
+  &_logo-wrapper {
+    @apply select-none pointer-events-none;
+    span {
+      @apply font-terminatorTwo pointer-events-none;
+    }
+  }
+  &_link-container {
+    @apply grid grid-flow-col gap-20  text-[#e4e4e4] items-center;
+    a {
+      @apply transition-all font-lato relative duration-500 h-fit cursor-pointer;
+    }
+
+    a::before {
+      @apply block absolute bottom-0 content-[''] w-[0] h-[1px] bg-white transition-all duration-500;
+    }
+    a:hover {
+      @apply text-white;
+    }
+    a:hover::before {
+      @apply w-full;
+    }
+  }
+
+  &_btn-dropdown {
+    @apply my-auto;
+    svg {
+      @apply text-[#e4e4e4] text-4xl;
+    }
+  }
+}

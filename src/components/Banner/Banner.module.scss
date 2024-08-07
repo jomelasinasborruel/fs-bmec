@@ -1,0 +1,33 @@
+.banner {
+  &_wrapper {
+    @apply relative w-full h-[90vh] mt-[-5rem] bg-black;
+    height: 90dvh;
+
+    [class~="swiper-wrapper"] {
+      @apply w-full h-full relative;
+    }
+  }
+
+  &_swiper-wrapper,
+  &_swiper-slide {
+    @apply relative w-full h-full;
+  }
+
+  &_swiper-slide {
+    img {
+      @apply object-cover h-full w-full;
+    }
+  }
+
+  &_swiper-wrapper:before {
+    @apply content-[''] block absolute w-full h-full z-[2] bg-[#000000b9];
+  }
+
+  &_context-wrapper {
+    @apply absolute top-1/2 flex flex-col justify-center items-center left-1/2 -translate-x-1/2 z-10 text-4xl md:text-6xl text-white  -translate-y-1/2;
+  }
+
+  &_tagline {
+    @apply md:text-lg text-sm text-white font-caviarDreams tracking-[.5em] text-center;
+  }
+}
