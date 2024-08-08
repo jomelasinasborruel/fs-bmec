@@ -7,7 +7,7 @@
 
 .nav {
   &_wrapper {
-    @apply sticky top-0 h-20 w-full shadow-lg transition-colors duration-300 z-[10] flex justify-center items-center px-4;
+    @apply sticky top-0 h-20 w-full shadow-lg transition-colors duration-300 z-[100] flex justify-center items-center px-4;
     @screen md {
       @apply px-6;
     }

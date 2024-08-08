@@ -21,7 +21,6 @@ function App() {
 
   const handleClickScroll = (id: string) => {
     const element = document.getElementById(id);
-    console.log(element);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -55,22 +54,22 @@ function App() {
                 { "!shadow-[0_0_0_1px_#000000_inset]": isNavFix }
               )}
             >
-              <span className="font-terminatorTwo [text-shadow:_0_0_2px_#000] absolute top-[-5px] left-[-4px] text-[61px] leading-[3.125rem] text-primary">
+              <span className="font-terminatorTwo [text-shadow:_0_0_2px_#000] transition-colors duration-300 absolute top-[-5px] left-[-4px] text-[61px] leading-[3.125rem] text-primary">
                 f
               </span>
-              <span className="font-terminatorTwo [text-shadow:_0_0_2px_#000] absolute top-[22px] right-[-6px] text-[61px] leading-[3.125rem] text-primary">
+              <span className="font-terminatorTwo [text-shadow:_0_0_2px_#000] transition-colors duration-300 absolute top-[22px] right-[-6px] text-[61px] leading-[3.125rem] text-primary">
                 s
               </span>
               <div
                 className={clsx(
                   "absolute right-[0.1875rem] top-[0.125rem] size-2 rounded-full transition-colors duration-300 bg-[#e4e4e4]",
-                  { "bg-[#111111]": isNavFix }
+                  { "!bg-[#111111]": isNavFix }
                 )}
               />
               <div
                 className={clsx(
                   "absolute left-[0.0625rem] bottom-[0.25rem] size-2 rounded-full transition-colors duration-300 bg-[#e4e4e4]",
-                  { "bg-[#111111]": isNavFix }
+                  { "!bg-[#111111]": isNavFix }
                 )}
               />
             </div>
