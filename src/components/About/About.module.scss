@@ -1,0 +1,43 @@
+.about {
+  &_wrapper {
+    @apply px-4 flex justify-center items-end py-10;
+
+    @screen md {
+      @apply px-6;
+    }
+
+    @screen lg {
+      @apply px-8 py-20;
+    }
+  }
+}
+
+.digits {
+  &_content {
+    @apply max-w-[90rem] grid grid-flow-row  w-full items-center text-center max-md:gap-10 overflow-hidden;
+    @screen md {
+      @apply grid-cols-3 grid-flow-col;
+    }
+
+    .digits_item {
+      h2 {
+        @apply text-6xl font-lato font-light tracking-[.05em];
+        @screen lg {
+          @apply text-8xl;
+        }
+      }
+      h3 {
+        @apply text-primary text-2xl font-lato uppercase tracking-[.3em];
+        @screen lg {
+          @apply text-4xl;
+        }
+      }
+      p {
+        @apply text-base font-lato font-light;
+        @screen lg {
+          @apply text-xl;
+        }
+      }
+    }
+  }
+}

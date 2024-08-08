@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const BANNER_IMGS = [
   "https://res.cloudinary.com/jmcloudname/image/upload/v1723049706/fs-bmec/fojybccximfia2yfesgi.jpg",
-  "https://res.cloudinary.com/jmcloudname/image/upload/v1723049706/fs-bmec/eoyjeatuwsr5cnnbdntf.jpg",
+  // "https://res.cloudinary.com/jmcloudname/image/upload/v1723049706/fs-bmec/eoyjeatuwsr5cnnbdntf.jpg",
   "https://res.cloudinary.com/jmcloudname/image/upload/v1723049705/fs-bmec/zksitesplhffaoajdm1p.jpg",
   "https://res.cloudinary.com/jmcloudname/image/upload/v1723049707/fs-bmec/de6czotkfasi1n2f9nhv.jpg",
   "https://res.cloudinary.com/jmcloudname/image/upload/v1723049705/fs-bmec/egluznfjdjdvugplg5qs.jpg",
@@ -40,7 +40,7 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 100, x: 0 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
             className="text-primary relative"
           >
             Forti
@@ -48,7 +48,7 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 100, y: 0 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
             className="text-white relative"
           >
             serv
@@ -57,7 +57,7 @@ const Banner = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 100, y: 0 }}
-          transition={{ delay: 2, duration: 2 }}
+          transition={{ delay: 1, duration: 1 }}
           className={ax["banner_tagline"]}
         >
           LET'S MAKE THINGS WORK BETTER
