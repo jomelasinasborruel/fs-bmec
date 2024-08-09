@@ -1,4 +1,4 @@
-import ax from "./Banner.module.scss";
+import ax from "./Component.module.scss";
 import { SwiperSlide, Swiper } from "swiper/react";
 
 import "swiper/css";

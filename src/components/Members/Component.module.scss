@@ -1,0 +1,38 @@
+.members {
+  &_wrapper {
+    @apply flex lg:flex-row flex-col-reverse overflow-hidden justify-center relative items-center pb-10;
+
+    @screen lg {
+      @apply pt-20 pb-20;
+    }
+  }
+
+  &_image-wrapper {
+    @apply cursor-grabbing text-white relative flex flex-col justify-end bg-black mx-2 w-[14.0625rem] h-[18.75rem];
+
+    @screen md {
+      @apply w-[18.75rem] h-[25rem];
+    }
+    img {
+      @apply shadow-lg absolute h-full w-full object-cover;
+    }
+  }
+
+  &_overlay {
+    @apply bg-[linear-gradient(rgb(0,0,0,0),rgb(0,0,0,.8))]  w-full h-full absolute top-0 left-0;
+  }
+
+  &_item {
+    @apply grid gap-4;
+  }
+
+  &_item-details {
+    @apply relative p-4;
+    & > :first-child {
+      @apply mx-2 text-base font-lato;
+    }
+    & > :last-child {
+      @apply mx-2 text-base font-caviarDreams font-bold;
+    }
+  }
+}

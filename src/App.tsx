@@ -4,13 +4,16 @@ import Banner from "./components/Banner";
 import { motion } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useMedia } from "use-media";
-import About from "./components/About";
+import Digits from "./components/Digits";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import About from "./components/About";
+import Members from "./components/Members";
+import Services from "./components/Services";
 
 const ANCHRORS = [
-  { label: "About Us", anchor: "about-us" },
-  { label: "Services", anchor: "" },
+  { label: "About Us", anchor: "about" },
+  { label: "Services", anchor: "services" },
   { label: "Testimonies", anchor: "" },
   { label: "Contact Us", anchor: "" },
 ];
@@ -98,9 +101,11 @@ function App() {
           )}
         </div>
       </motion.nav>
-
       <Banner />
+      <Digits />
       <About />
+      <Members />
+      <Services />
     </div>
   );
 }
