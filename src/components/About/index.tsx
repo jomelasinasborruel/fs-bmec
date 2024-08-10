@@ -19,20 +19,22 @@ const About = () => {
             <span className="text-black">We are</span> Fortiserv
           </p>
           <p className={ax["about_description"]}>
-            Welcome to Fortiserv, your dedicated partner in tax consultation. At
-            Fortiserv, we are passionate about providing expert tax advisory
-            services tailored to meet your unique needs. With a team of highly
-            skilled professionals and years of industry experience, we offer
-            insightful guidance and strategic solutions to help you navigate the
-            complexities of tax regulations with confidence.
+            Welcome to Fortiserv, your dedicated partner in managing your
+            business's financial aspects. At Fortiserv, we are passionate about
+            providing expert government regulatory advisory services to comply
+            with requisites. With a team of highly skilled professionals and
+            years of industry experience, we offer insightful guidance and
+            strategic solutions to help you navigate the complexities of
+            taxation and other regulatory bodies with confidence
             <br />
             <br />
             At Fortiserv, we believe that transparency, integrity, and
-            personalized service are the cornerstones of a successful client
-            relationship. We take the time to understand your unique financial
-            situation and tailor our services to meet your specific needs. Our
-            proactive approach and meticulous attention to detail ensure that
-            you receive the best possible guidance and support.
+            accountability are the cornerstones of a successful client
+            relationship. We take time to understand your unique financial
+            situation and collaborate on ideas to meet client preferences and to
+            make things work better. Our proactive approach and meticulous
+            attention to detail ensure that you receive the best guidance and
+            support.
           </p>
         </motion.div>
       </div>
