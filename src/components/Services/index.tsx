@@ -20,19 +20,21 @@ const Services = () => {
           <p className={ax["services_title"]}>
             <span className="text-black">What we </span> offer
           </p>
-          {servicesDetails.map((item) => (
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-              }}
-              viewport={{ once: true }}
-              className={ax["services_description"]}
-            >
-              {item.service}
-            </motion.div>
-          ))}
+          <div className="block md:columns-2">
+            {servicesDetails.map((item) => (
+              <motion.p
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                }}
+                viewport={{ once: true }}
+                className={ax["services_service"]}
+              >
+                ‣ {item.service}
+              </motion.p>
+            ))}
+          </div>
         </motion.div>
       </div>
       <motion.div

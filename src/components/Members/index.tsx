@@ -29,7 +29,7 @@ const Members = () => {
               <div className={ax["members_image-wrapper"]}>
                 <img src={member.src} alt="member-photo" />
               </div>
-            </div>{" "}
+            </div>
             <div className={ax["members_overlay"]} />
             <div className={ax["members_item-details"]}>
               <p>{member.name}</p>

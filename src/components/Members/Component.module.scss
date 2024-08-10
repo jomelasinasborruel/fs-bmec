@@ -9,9 +9,7 @@
 
   &_image-wrapper {
     @apply cursor-grabbing text-white relative flex flex-col justify-end bg-white mx-2;
-    // &::after {
-    //   @apply content-[''] block absolute w-full h-full bg-[#00000062];
-    // }
+
     img {
       @apply shadow-lg absolute h-full w-full object-cover object-top;
     }

@@ -1,14 +1,35 @@
 [
   {
-    "service": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus massa sit amet sapien cursus varius vel vel elit. Quisque lectus neque, vulputate id vulputate eu, vestibulum non mi. Phasellus blandit nibh egestas eros sollicitudin pharetra. Quisque imperdiet nisl quis lectus sodales,"
+    "service": "Monthly tax returns (BIR FORM 0619E and 1601C)"
   },
   {
-    "service": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus massa sit amet sapien cursus varius vel vel elit. Quisque lectus neque, vulputate id vulputate eu, vestibulum non mi. Phasellus blandit nibh egestas eros sollicitudin pharetra. Quisque imperdiet nisl quis lectus sodales,"
+    "service": "Quarterly tax returns (BIR FORMS 1601EQ, 2550Q, and 1701Q)"
   },
   {
-    "service": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus massa sit amet sapien cursus varius vel vel elit. Quisque lectus neque, vulputate id vulputate eu, vestibulum non mi. Phasellus blandit nibh egestas eros sollicitudin pharetra. Quisque imperdiet nisl quis lectus sodales,"
+    "service": "Quarterly alpha list on expanded withholding tax"
   },
+  { "service": "Annual tax returns (BIR FORM 1701RT)" },
   {
-    "service": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus massa sit amet sapien cursus varius vel vel elit. Quisque lectus neque, vulputate id vulputate eu, vestibulum non mi. Phasellus blandit nibh egestas eros sollicitudin pharetra. Quisque imperdiet nisl quis lectus sodales,"
-  }
+    "service": "Annual alpha list (BIR FORM 1604E and 1604CF)"
+  },
+  { "service": "Inventory list" },
+  {
+    "service": "Employees’ compensation (BIR FORM 2316)."
+  },
+  { "service": "Summary list of sales and purchase" },
+  {
+    "service": "Payment to the bank of the taxes due thereon using the prepared tax returns."
+  },
+  { "service": "Monitoring of monthly records of sales/income" },
+  { "service": "Monitoring of monthly expenses/disbursements" },
+  {
+    "service": "Compilation of reports in preparation for the financial statements for the year end covering"
+  },
+  { "service": "a given period." },
+  { "service": "Processing of Renewals (permits and fees)" },
+  {
+    "service": "Assist in any way that would be helpful on queries regarding taxes and other issues"
+  },
+  { "service": "concerning BIR and other agencies concerned." },
+  { "service": "Contributions of Employer and Employees" }
 ]
