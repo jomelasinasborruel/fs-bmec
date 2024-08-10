@@ -18,7 +18,7 @@ const Members = () => {
       transition={{ duration: 1 }}
       className={ax["members_wrapper"]}
     >
-      <Marquee autoFill play={play} className={clsx("w-full")} speed={10}>
+      <Marquee autoFill play={play} className={clsx("w-full")} speed={20}>
         {membersDetail.map((member) => (
           <div className={ax["members_item"]}>
             <div
