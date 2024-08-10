@@ -20,18 +20,20 @@ const Members = () => {
     >
       <Marquee autoFill play={play} className={clsx("w-full")} speed={20}>
         {membersDetail.map((member) => (
-          <div className={ax["members_item"]}>
-            <div
-              onMouseEnter={() => setPlay(false)}
-              onMouseLeave={() => setPlay(true)}
-              className={ax["members_image-wrapper"]}
-            >
-              <img src={member.src} alt="member-photo" />
-              <div className={ax["members_overlay"]} />
-              <div className={ax["members_item-details"]}>
-                <p>{member.name}</p>
-                <p>{member.position}</p>
+          <div
+            onMouseEnter={() => setPlay(false)}
+            onMouseLeave={() => setPlay(true)}
+            className="relative mx-2 cursor-grabbing"
+          >
+            <div className={ax["members_item"]}>
+              <div className={ax["members_image-wrapper"]}>
+                <img src={member.src} alt="member-photo" />
               </div>
+            </div>{" "}
+            <div className={ax["members_overlay"]} />
+            <div className={ax["members_item-details"]}>
+              <p>{member.name}</p>
+              <p>{member.position}</p>
             </div>
           </div>
         ))}
