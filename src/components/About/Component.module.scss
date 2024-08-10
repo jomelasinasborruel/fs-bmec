@@ -1,6 +1,6 @@
 .about {
   &_wrapper {
-    @apply px-4 flex lg:flex-row flex-col-reverse overflow-hidden justify-center relative items-center pb-10 overflow-hidden;
+    @apply px-4 flex lg:flex-row flex-col-reverse overflow-hidden justify-center relative items-center pb-10;
 
     @screen md {
       @apply px-6;
