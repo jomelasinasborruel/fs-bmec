@@ -32,7 +32,7 @@
   }
 
   &_description {
-    @apply text-lg leading-10 font-lato lg:max-w-[90%] p-4 shadow-xl rounded-lg border border-[#272727];
+    @apply text-lg leading-10 font-lato lg:max-w-[90%] p-4 shadow-sm rounded-lg shadow-primary border-[#272727];
   }
   &_image-container {
     @apply relative lg:absolute lg:w-1/3 w-full lg:h-full h-[500px] lg:left-0 lg:top-0;

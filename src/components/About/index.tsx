@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div id="about" className={ax["about_wrapper"]}>
+    <div className={ax["about_wrapper"]}>
+      <div id="about" className="absolute -top-20 left-0" />
       <div className={ax["about_content"]}>
         <motion.div
           initial={{ opacity: 0, x: -300 }}
@@ -15,7 +16,7 @@ const About = () => {
           className={ax["about_text-wrapper"]}
         >
           <p className={ax["about_title"]}>
-            <span className="text-black">We're</span> Fortiserv
+            <span className="text-black">We are</span> Fortiserv
           </p>
           <p className={ax["about_description"]}>
             Welcome to Fortiserv, your dedicated partner in tax consultation. At

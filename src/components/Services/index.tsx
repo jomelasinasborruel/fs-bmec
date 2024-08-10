@@ -4,7 +4,8 @@ import servicesDetails from "./servicesDetails.json";
 
 const Services = () => {
   return (
-    <div id="services" className={ax["services_wrapper"]}>
+    <div className={ax["services_wrapper"]}>
+      <div id="services" className="absolute -top-20 left-0" />
       <div className={ax["services_content"]}>
         <div />
         <motion.div
