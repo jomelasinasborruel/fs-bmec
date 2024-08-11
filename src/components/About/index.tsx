@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className={ax["about_wrapper"]}>
-      <div id="about" className="absolute -top-20 left-0" />
+      <div id="about" className="absolute -top-24 left-0" />
       <div className={ax["about_content"]}>
         <motion.div
           initial={{ opacity: 0, x: -300, y: 200 }}

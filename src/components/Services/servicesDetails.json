@@ -23,13 +23,11 @@
   { "service": "Monitoring of monthly records of sales/income" },
   { "service": "Monitoring of monthly expenses/disbursements" },
   {
-    "service": "Compilation of reports in preparation for the financial statements for the year end covering"
+    "service": "Compilation of reports in preparation for the financial statements for the year end covering a given period."
   },
-  { "service": "a given period." },
   { "service": "Processing of Renewals (permits and fees)" },
   {
-    "service": "Assist in any way that would be helpful on queries regarding taxes and other issues"
+    "service": "Assist in any way that would be helpful on queries regarding taxes and other issues concerning BIR and other agencies concerned."
   },
-  { "service": "concerning BIR and other agencies concerned." },
   { "service": "Contributions of Employer and Employees" }
 ]

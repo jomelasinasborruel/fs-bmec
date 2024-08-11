@@ -5,7 +5,7 @@ import servicesDetails from "./servicesDetails.json";
 const Services = () => {
   return (
     <div className={ax["services_wrapper"]}>
-      <div id="services" className="absolute -top-20 left-0" />
+      <div id="services" className="absolute -top-24 left-0" />
       <div className={ax["services_content"]}>
         <div />
         <motion.div
@@ -20,21 +20,20 @@ const Services = () => {
           <p className={ax["services_title"]}>
             <span className="text-black">What we </span> offer
           </p>
-          <div className="block md:columns-2">
+          <ul>
             {servicesDetails.map((item) => (
-              <motion.p
+              <motion.li
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 1,
                 }}
                 viewport={{ once: true }}
-                className={ax["services_service"]}
               >
-                ‣ {item.service}
-              </motion.p>
+                {item.service}
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </motion.div>
       </div>
       <motion.div
