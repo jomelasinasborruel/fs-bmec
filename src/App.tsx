@@ -10,19 +10,25 @@ import clsx from "clsx";
 import About from "./components/About";
 import Members from "./components/Members";
 import Services from "./components/Services";
+import ModalContactForm from "./components/Modal/ContactForm/ContactForm";
 
 const ANCHRORS = [
-  { label: "About Us", anchor: "about" },
-  { label: "Services", anchor: "services" },
-  { label: "Testimonies", anchor: "" },
-  { label: "Contact Us", anchor: "" },
+  { label: "About Us", key: "about" },
+  { label: "Services", key: "services" },
+  { label: "Testimonies", key: "" },
+  { label: "Contact Us", key: "contactForm" },
 ];
 
 function App() {
   const isLargeDevice = useMedia("screen and (min-width:1024px)", true);
   const [isNavFix, setIsNavFix] = useState(false);
+  const [toggleModal, setToggleModal] = useState(false);
 
-  const handleClickScroll = (id: string) => {
+  const handleLinks = (id: string) => {
+    if (id === "contactForm") {
+      setToggleModal(true);
+    }
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -43,6 +49,8 @@ function App() {
   }, []);
   return (
     <div className={ax["homepage_wrapper"]}>
+      <ModalContactForm open={toggleModal} onClose={setToggleModal} />
+
       <motion.nav
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 100, y: 0 }}
@@ -84,7 +92,13 @@ function App() {
               })}
             >
               {ANCHRORS.map((item) => (
-                <button onClick={() => handleClickScroll(item.anchor ?? "")}>
+                <button
+                  key={item.key}
+                  onClick={() => handleLinks(item.key ?? "")}
+                  className={clsx({
+                    [ax["btnContact"]]: item.key === "contactForm",
+                  })}
+                >
                   {item.label}
                 </button>
               ))}

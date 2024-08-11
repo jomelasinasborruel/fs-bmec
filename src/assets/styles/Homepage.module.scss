@@ -31,23 +31,29 @@
       @apply transition-all font-lato relative duration-500 h-fit cursor-pointer border-none select-none;
     }
 
-    button::before {
+    button:not(.btnContact):before {
       @apply block absolute bottom-0 content-[''] w-[0] h-[1px] bg-[#e4e4e4] transition-all duration-500;
     }
-    button:hover {
+    button:not(.btnContact):hover {
       @apply text-[#e4e4e4];
     }
-    button:hover::before {
+    button:not(.btnContact):hover::before {
       @apply w-full;
+    }
+    button.btnContact {
+      @apply py-4 h-full px-5 bg-primary text-[#ffffff] rounded-sm transition-colors duration-200;
+    }
+    button.btnContact:hover {
+      @apply py-4 px-5 bg-[#cacaca] text-[#1b1b1b] rounded-sm;
     }
   }
 
   &_link-container--navFix {
     @apply text-[#383838];
-    button::before {
+    button:not(.btnContact):before {
       @apply bg-[#111111];
     }
-    button:hover {
+    button:not(.btnContact):hover {
       @apply text-[#111111];
     }
   }

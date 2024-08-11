@@ -1,0 +1,43 @@
+.contactForm {
+  &_wrapper {
+    @apply px-4 flex lg:flex-row flex-col-reverse overflow-hidden justify-center relative items-center pb-10;
+
+    @screen md {
+      @apply px-6;
+    }
+
+    @screen lg {
+      @apply px-8 py-20;
+    }
+  }
+  &_content {
+    @apply max-w-[90rem] grid w-full relative items-center text-start;
+    @screen lg {
+      @apply grid-cols-2 grid-flow-col gap-10;
+    }
+  }
+
+  &_text-wrapper {
+    @apply space-y-4 max-lg:mt-10;
+  }
+
+  &_title {
+    @apply text-5xl font-caviarDreams text-primary font-bold;
+    @screen md {
+      @apply text-7xl;
+    }
+    @screen lg {
+      @apply max-w-[90%];
+    }
+  }
+
+  &_description {
+    @apply text-lg leading-10 font-lato lg:max-w-[90%];
+  }
+  &_image-container {
+    @apply relative lg:absolute lg:w-1/2 w-full lg:h-full h-[500px] lg:right-0 lg:top-0;
+    img {
+      @apply object-cover w-full h-full;
+    }
+  }
+}

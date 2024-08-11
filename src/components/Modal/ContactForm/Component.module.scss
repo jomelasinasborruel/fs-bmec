@@ -1,0 +1,11 @@
+.contact-form {
+  &_wrapper {
+    @apply bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[43.75rem];
+  }
+}
+
+.inputText {
+  &_wrapper {
+    @apply w-full h-[3.125rem] border border-[#00000079] relative rounded-md transition-colors duration-200;
+  }
+}

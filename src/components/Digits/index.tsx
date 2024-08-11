@@ -9,7 +9,12 @@ const Digits = () => {
     <div id="digits" className={ax["digits_wrapper"]}>
       <div className={ax["digits_content"]}>
         {digitItems.map((item, index) => (
-          <DigitItem item={item} index={index} isLargeDevice={isLagreDevice} />
+          <DigitItem
+            key={item.value}
+            item={item}
+            index={index}
+            isLargeDevice={isLagreDevice}
+          />
         ))}
       </div>
     </div>
