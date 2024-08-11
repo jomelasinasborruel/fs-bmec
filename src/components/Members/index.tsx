@@ -19,8 +19,9 @@ const Members = () => {
       className={ax["members_wrapper"]}
     >
       <Marquee autoFill play={play} className={clsx("w-full")} speed={20}>
-        {membersDetail.map((member) => (
+        {membersDetail.map((member, index) => (
           <div
+            key={member.src + String(index)}
             onMouseEnter={() => setPlay(false)}
             onMouseLeave={() => setPlay(true)}
             className="relative mx-2 cursor-grabbing"

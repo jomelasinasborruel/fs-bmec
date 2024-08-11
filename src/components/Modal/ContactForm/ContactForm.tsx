@@ -3,19 +3,19 @@ import ax from "./Component.module.scss";
 import Fade from "@mui/material/Fade";
 import React, { useState } from "react";
 import clsx from "clsx";
-import { SubmitHandler, useForm, Resolver } from "react-hook-form";
+import { useForm, Resolver } from "react-hook-form";
 
 type FormValues = {
-  firstName: string;
-  lastName: string;
+  name: string;
+  email: string;
 };
 
 const resolver: Resolver<FormValues> = async (values) => {
   return {
-    values: values.firstName ? values : {},
-    errors: !values.firstName
+    values: values.name ? values : {},
+    errors: !values.email
       ? {
-          firstName: {
+          name: {
             type: "required",
             message: "This is required.",
           },
@@ -31,12 +31,7 @@ const ModalContactForm = ({
   open: boolean;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>({ resolver });
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const { register } = useForm<FormValues>({ resolver });
 
   return (
     <Modal open={open} onClose={() => onClose(false)}>
@@ -57,7 +52,7 @@ const ModalContactForm = ({
             <p className="mb-4 text-4xl font-lato font-bold text-[#1b1b1b]">
               How can we be of <span className="text-primary">service?</span>
             </p>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form>
               <div className="grid grid-flow-col gap-4">
                 <InputText label={"Name"} {...register("name")} />
                 <InputText label={"Email"} {...register("email")} />
