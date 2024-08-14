@@ -1,7 +1,7 @@
 import ax from "./assets/styles/Homepage.module.scss";
 import "./App.css";
 import Banner from "./components/Banner";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useMedia } from "use-media";
 import Digits from "./components/Digits";
@@ -23,6 +23,7 @@ function App() {
   const isLargeDevice = useMedia("screen and (min-width:1024px)", true);
   const [isNavFix, setIsNavFix] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
+  const [toggleMobileMenu, setTogglemobileMenu] = useState(false);
 
   const handleLinks = (id: string) => {
     if (id === "contactForm") {
@@ -33,7 +34,14 @@ function App() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+
+    if (!isLargeDevice) setTogglemobileMenu(false);
   };
+
+  const handleHamburgerBtn = () => {
+    setTogglemobileMenu((prev) => !prev);
+  };
+
   const handleScroll = () => {
     if (scrollY > 80) {
       setIsNavFix(true);
@@ -50,7 +58,6 @@ function App() {
   return (
     <div className={ax["homepage_wrapper"]}>
       <ModalContactForm open={toggleModal} onClose={setToggleModal} />
-
       <motion.nav
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 100, y: 0 }}
@@ -109,10 +116,38 @@ function App() {
               className={clsx(ax["nav_btn-dropdown"], {
                 [ax["nav_btn-dropdown--navFix"]]: isNavFix,
               })}
+              onClick={handleHamburgerBtn}
             >
               <RxHamburgerMenu />
             </button>
           )}
+          <AnimatePresence>
+            {!isLargeDevice && toggleMobileMenu && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 100 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setTogglemobileMenu(false)}
+                className={ax["nav_dropdown"]}
+              >
+                {ANCHRORS.map((item, index) => (
+                  <motion.button
+                    key={item.key}
+                    onClick={() => handleLinks(item.key ?? "")}
+                    initial={{ opacity: 0, y: "-200%" }}
+                    animate={{ opacity: 100, y: 0 }}
+                    exit={{ opacity: 0, y: "-200%" }}
+                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                    style={{ zIndex: ANCHRORS.length - index }}
+                    className={ax["nav_dropdown__item"]}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.nav>
       <Banner />

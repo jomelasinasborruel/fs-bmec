@@ -16,7 +16,7 @@
   }
 
   &_overlay {
-    @apply bg-[linear-gradient(rgb(0,0,0,0),rgb(0,0,0,.75))]  shadow-[0_0_0_1px_#00000083_inset] w-full h-full absolute top-0 left-0;
+    @apply bg-[linear-gradient(rgb(0,0,0,0),#052715)]  shadow-[0_0_0_1px_#00000083_inset] w-full h-full absolute top-0 left-0;
   }
 
   &_item {

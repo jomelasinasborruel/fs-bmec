@@ -69,4 +69,12 @@
       }
     }
   }
+
+  &_dropdown {
+    @apply flex flex-col fixed items-center space-y-4 pt-4 top-20 bg-[#00000067] left-0  w-full h-[calc(100vh-80px)];
+  }
+
+  &_dropdown__item {
+    @apply p-8 rounded-full font-caviarDreams text-3xl min-w-[18.75rem] bg-[#1a550e] text-[#e0e0e0] w-fit;
+  }
 }
