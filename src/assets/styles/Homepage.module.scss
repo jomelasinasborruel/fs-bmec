@@ -71,7 +71,7 @@
   }
 
   &_dropdown {
-    @apply flex flex-col fixed items-center space-y-4 pt-4 top-20 bg-[#00000067] left-0  w-full h-[calc(100vh-80px)];
+    @apply flex flex-col fixed items-center space-y-4 pt-4 top-20 bg-[#000000b9] justify-center left-0  w-full h-[calc(100vh-80px)];
   }
 
   &_dropdown__item {
