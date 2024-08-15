@@ -71,10 +71,10 @@
   }
 
   &_dropdown {
-    @apply flex flex-col fixed items-center space-y-4 pt-4 top-20 bg-[#000000b9] justify-center left-0  w-full h-[calc(100vh-80px)];
+    @apply flex flex-col fixed items-center space-y-4 top-20 bg-[#000000b9] justify-start pt-10 left-0  w-full h-[calc(100vh-80px)];
   }
 
   &_dropdown__item {
-    @apply p-8 rounded-full font-caviarDreams text-3xl min-w-[18.75rem] bg-[#1a550e] text-[#e0e0e0] w-fit;
+    @apply p-8 rounded-full font-caviarDreams text-2xl min-w-[18.75rem] bg-[#c5c5c5] text-[#161616] uppercase w-fit tracking-wider;
   }
 }

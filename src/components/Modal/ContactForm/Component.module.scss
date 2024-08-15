@@ -1,9 +1,31 @@
 .contact-form {
   &_wrapper {
-    @apply bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[43.75rem];
+    @apply bg-white relative w-[90vw] max-w-[43.75rem] h-fit my-auto rounded-xl overflow-hidden;
+
+    .btn-close {
+      @apply rotate-45 block text-white absolute top-3 right-5 text-3xl z-10 font-lato font-light;
+    }
+
+    .overlay {
+      @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-[#000000b9];
+    }
 
     .btn-submit {
       @apply mt-10 py-3 px-10 block rounded-md transition-colors duration-200 mx-auto cursor-pointer bg-primary text-white hover:text-black hover:bg-[#cccccc];
+    }
+
+    .input-group {
+      @apply grid sm:grid-flow-col grid-flow-row sm:grid-cols-2 gap-8 md:gap-4 mt-8;
+    }
+  }
+
+  &_header {
+    @apply md:h-[18.75rem] h-[12.5rem] w-full relative flex justify-center items-center;
+    img {
+      @apply w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
+    }
+    p {
+      @apply font-terminatorTwo relative text-primary text-3xl tracking-wide;
     }
   }
 }

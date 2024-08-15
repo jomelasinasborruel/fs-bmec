@@ -11,6 +11,7 @@ import About from "./components/About";
 import Members from "./components/Members";
 import Services from "./components/Services";
 import ModalContactForm from "./components/Modal/ContactForm/ContactForm";
+import { Snackbar } from "@mui/material";
 
 const ANCHRORS = [
   { label: "About Us", key: "about" },
@@ -24,6 +25,7 @@ function App() {
   const [isNavFix, setIsNavFix] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
   const [toggleMobileMenu, setTogglemobileMenu] = useState(false);
+  const [toggleSnackBar, setToggleSnackBar] = useState<"sent" | "error">();
 
   const handleLinks = (id: string) => {
     if (id === "contactForm") {
@@ -50,14 +52,41 @@ function App() {
     setIsNavFix(false);
   };
 
+  const PopUps = () => (
+    <>
+      <ModalContactForm
+        open={toggleModal}
+        onClose={setToggleModal}
+        onEmailSend={(e) => {
+          setToggleSnackBar(e);
+        }}
+      />
+      <Snackbar
+        open={toggleSnackBar === "sent" || toggleSnackBar === "error"}
+        autoHideDuration={4000}
+        onClose={() => {
+          setToggleSnackBar(undefined);
+        }}
+        ContentProps={{
+          sx: {
+            backgroundColor: toggleSnackBar === "sent" ? "#00a74f" : "#af1717",
+          },
+        }}
+        message={
+          toggleSnackBar === "sent" ? "Email Sent" : "Email Sending Failed"
+        }
+      />
+    </>
+  );
+
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
-
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <div className={ax["homepage_wrapper"]}>
-      <ModalContactForm open={toggleModal} onClose={setToggleModal} />
+      <PopUps />
       <motion.nav
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 100, y: 0 }}

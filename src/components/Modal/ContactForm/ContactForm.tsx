@@ -22,9 +22,11 @@ const schema = yup
 const ModalContactForm = ({
   open,
   onClose,
+  onEmailSend,
 }: {
   open: boolean;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
+  onEmailSend: (e: "sent" | "error") => void;
 }) => {
   const {
     register,
@@ -36,6 +38,13 @@ const ModalContactForm = ({
     resolver: yupResolver(schema),
   });
 
+  const handleClose = () => {
+    onClose(false);
+    reset();
+  };
+
+  // useEffect(() => {docu}, []);
+
   const onSubmit = () =>
     //   e: {
     //   name?: string | undefined;
@@ -43,6 +52,8 @@ const ModalContactForm = ({
     //   email: string;
     // }
     {
+      onEmailSend("error");
+      handleClose();
       // fetch("http://localhost:3000/mailer/send-sample", {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },
@@ -54,23 +65,25 @@ const ModalContactForm = ({
 
   return (
     <Modal
+      id="modal-wrapper"
+      className="py-10 px-4 justify-center  flex overflow-auto"
       open={open}
-      onClose={() => {
-        onClose(false);
-        reset();
-      }}
+      onClose={handleClose}
+      disableAutoFocus
     >
       <Fade in={open}>
         <Box className={ax["contact-form_wrapper"]}>
-          <div className="h-[18.75rem] w-full relative flex justify-center items-center">
+          <button onClick={handleClose} className={ax["btn-close"]}>
+            🞢
+          </button>
+          <div className={ax["contact-form_header"]}>
             <img
               src="https://res.cloudinary.com/jmcloudname/image/upload/v1723273405/fs-bmec/f9couafms1jlqa5xbbat.jpg"
               alt="modal-image"
-              className="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
             />
-            <div className="absolute top-0 left-0 w-full h-full bg-[#000000b9]" />
-            <p className="font-terminatorTwo relative text-primary text-3xl">
-              forti<span className="text-white">serve</span>
+            <div className={ax["overlay"]} />
+            <p>
+              forti<span className="text-white">serv</span>
             </p>
           </div>
           <div className="py-10 px-8">
@@ -78,7 +91,7 @@ const ModalContactForm = ({
               How can we be of <span className="text-primary">service?</span>
             </p>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="grid sm:grid-flow-col grid-flow-row sm:grid-cols-2 gap-4 mt-8">
+              <div className={ax["input-group"]}>
                 <InputText
                   label={"Name"}
                   value={watch("name")}
@@ -94,7 +107,7 @@ const ModalContactForm = ({
               </div>
               <div className="mt-8">
                 <InputTextArea
-                  label={"Messages"}
+                  label={"Message"}
                   value={watch("message")}
                   error={errors.message}
                   {...register("message")}
