@@ -66,7 +66,7 @@ const ModalContactForm = ({
   return (
     <Modal
       id="modal-wrapper"
-      className="py-10 px-4 justify-center  flex overflow-auto"
+      className="pb-10 pt-20 px-4 justify-center  flex overflow-auto"
       open={open}
       onClose={handleClose}
       disableAutoFocus
