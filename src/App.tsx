@@ -13,6 +13,7 @@ import Services from "./components/Services";
 import ModalContactForm from "./components/Modal/ContactForm/ContactForm";
 import { Snackbar } from "@mui/material";
 import smoothscroll from "smoothscroll-polyfill";
+import zenscroll from "zenscroll";
 
 const ANCHRORS = [
   { label: "About Us", key: "about" },
@@ -35,7 +36,7 @@ function App() {
 
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      zenscroll.to(element, 700);
     }
 
     if (!isLargeDevice) setTogglemobileMenu(false);

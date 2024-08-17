@@ -46,7 +46,7 @@ const Services = () => {
         viewport={{ once: true }}
         className={ax["services_image-container"]}
       >
-        <img src="https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/mptd2wbbtuzcwuvxzjkd" />
+        <img src="https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1000/v1/fs-bmec/mptd2wbbtuzcwuvxzjkd" />
       </motion.div>
     </div>
   );

@@ -8,10 +8,10 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
 
 const BANNER_IMGS = [
-  "https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/de6czotkfasi1n2f9nhv",
-  "https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/fojybccximfia2yfesgi",
-  "https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/zksitesplhffaoajdm1p",
-  "https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/egluznfjdjdvugplg5qs",
+  "https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1440/v1/fs-bmec/de6czotkfasi1n2f9nhv",
+  "https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1440/v1/fs-bmec/fojybccximfia2yfesgi",
+  "https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1440/v1/fs-bmec/zksitesplhffaoajdm1p",
+  "https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1440/v1/fs-bmec/egluznfjdjdvugplg5qs",
 ];
 
 const Banner = () => {
