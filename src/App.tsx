@@ -12,6 +12,7 @@ import Members from "./components/Members";
 import Services from "./components/Services";
 import ModalContactForm from "./components/Modal/ContactForm/ContactForm";
 import { Snackbar } from "@mui/material";
+import smoothscroll from "smoothscroll-polyfill";
 
 const ANCHRORS = [
   { label: "About Us", key: "about" },
@@ -81,6 +82,7 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
+    smoothscroll.polyfill();
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 

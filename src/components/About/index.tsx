@@ -47,7 +47,7 @@ const About = () => {
         viewport={{ once: true }}
         className={ax["about_image-container"]}
       >
-        <img src="https://res.cloudinary.com/jmcloudname/image/upload/v1723220605/fs-bmec/wwhidsq7xyxsv5oc249f.jpg" />
+        <img src="https://res.cloudinary.com/jmcloudname/image/upload/f_auto,q_auto/v1/fs-bmec/wwhidsq7xyxsv5oc249f" />
       </motion.div>
     </div>
   );
