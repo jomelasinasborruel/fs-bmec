@@ -6,6 +6,9 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { motion } from "framer-motion";
+import clsx from "clsx";
+import useMousePosition from "../../utils/useMousePosition";
+import { useState } from "react";
 
 const BANNER_IMGS = [
   "https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1440/v1/fs-bmec/de6czotkfasi1n2f9nhv",
@@ -15,8 +18,11 @@ const BANNER_IMGS = [
 ];
 
 const Banner = () => {
+  const { x, y } = useMousePosition();
+
+  const [cursorSize, setCursorSize] = useState(50);
   return (
-    <div className={ax["banner_wrapper"]}>
+    <div id={"banner"} className={ax["banner_wrapper"]}>
       <Swiper
         autoplay
         effect="fade"
@@ -62,6 +68,50 @@ const Banner = () => {
           LET'S MAKE THINGS WORK BETTER
         </motion.div>
       </div>
+      <motion.div
+        className={clsx(
+          ax["banner_context-wrapper"],
+          ax["banner_context-wrapper__mask"]
+        )}
+        animate={
+          x && y
+            ? {
+                WebkitMaskPosition: `${x - cursorSize / 2}px ${
+                  y - cursorSize / 2
+                }px`,
+                WebkitMaskSize: cursorSize + "px",
+                background: cursorSize === 300 ? "#00a74f" : "#00a74e5d",
+              }
+            : {}
+        }
+        onMouseLeave={() => setCursorSize(0)}
+        onMouseEnter={() => setCursorSize(40)}
+        transition={{
+          type: "tween",
+          ease: "backOut",
+          duration: 0.2,
+          WebkitMaskSize: {
+            duration: 1,
+            type: "spring",
+            damping: 30,
+            stiffness: 200,
+          },
+          background: { duration: 0.2 },
+        }}
+      >
+        <div
+          className="font-terminatorTwo flex"
+          onMouseEnter={() => setCursorSize(300)}
+          onMouseLeave={() => setCursorSize(30)}
+        >
+          <div className="relative text-center">
+            Business <span>Management</span>
+            <div className={clsx(ax["banner_tagline"], "text-black")}>
+              Enterprise Co.
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

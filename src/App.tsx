@@ -37,7 +37,7 @@ function App() {
 
     const element = document.getElementById(id);
     if (element) {
-      zenscroll.to(element, 700);
+      zenscroll.to(element);
     }
 
     if (!isLargeDevice) setTogglemobileMenu(false);
