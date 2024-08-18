@@ -17,6 +17,9 @@
     @screen lg {
       @apply px-8 py-20;
     }
+    & > img {
+      @apply w-full h-full absolute top-0 left-0 blur-sm object-cover;
+    }
   }
 
   &_title-container {
@@ -29,10 +32,39 @@
     @screen lg {
       @apply px-8 py-[3.75rem];
     }
+
+    h1 {
+      @apply lg:text-8xl text-6xl relative z-10 font-caviarDreams text-center;
+    }
   }
 
   &_content {
     @apply max-w-[90rem] w-full items-center relative text-center
      justify-center flex text-black z-10 self-start mb-10 lg:mb-[6.25rem];
+  }
+
+  &_card {
+    @apply max-w-[62.5rem] shadow-xl shadow-[#00000067] w-[90vw] bg-[#ffffff] flex lg:flex-row flex-col-reverse;
+  }
+
+  &_card_texts-container {
+    @apply lg:p-20 p-10 max-lg:pt-20 max-lg:pb-10 lg:w-[60%] text-left font-caviarDreams text-xl relative;
+  }
+
+  &_card_texts-container svg {
+    @apply text-[#0d4b0b] text-[5.625rem] lg:text-[200px];
+  }
+
+  &_card__description {
+    @apply absolute lg:top-[-5.625rem] -top-1.5 left-2 lg:left-[-3.125rem] z-10;
+  }
+  &_card__author {
+    @apply text-right font-lato font-bold;
+  }
+  &_card__image-wrapper {
+    @apply lg:w-[40%] relative max-lg:h-[31.25rem] max-md:h-[18.75rem];
+    img {
+      @apply object-cover h-full absolute top-0 left-0 w-full object-top;
+    }
   }
 }

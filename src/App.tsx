@@ -15,7 +15,7 @@ import { Snackbar } from "@mui/material";
 import smoothscroll from "smoothscroll-polyfill";
 import zenscroll from "zenscroll";
 import ClientReviews from "./components/ClientReviews";
-
+import { FaFacebookMessenger } from "react-icons/fa";
 const ANCHRORS = [
   { label: "About Us", key: "about" },
   { label: "Services", key: "services" },
@@ -91,6 +91,11 @@ function App() {
   return (
     <div className={ax["homepage_wrapper"]}>
       <PopUps />
+      <div className="fixed bottom-10 right-10 z-[100] size-10 rounded-full bg-white flex justify-center items-center">
+        <a href="http://m.me/fortiserv.bmec.3">
+          <FaFacebookMessenger className="text-blue-700 size-8" />
+        </a>
+      </div>
       <motion.nav
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 100, y: 0 }}
