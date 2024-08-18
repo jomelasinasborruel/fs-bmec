@@ -4,7 +4,7 @@
   }
 
   &_container {
-    @apply px-4 grid overflow-hidden justify-center items-center py-20 relative gap-y-10 lg:gap-y-[6.25rem];
+    @apply px-4 flex flex-col overflow-hidden justify-center items-center py-20 relative;
 
     &::after {
       @apply content-[''] block absolute size-full top-0 left-0 bg-[#ffffff8c];
@@ -33,6 +33,6 @@
 
   &_content {
     @apply max-w-[90rem] w-full items-center relative text-center
-     justify-center flex text-black z-10 self-start;
+     justify-center flex text-black z-10 self-start mb-10 lg:mb-[6.25rem];
   }
 }
