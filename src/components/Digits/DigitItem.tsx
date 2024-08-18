@@ -35,7 +35,6 @@ const DigitItem = (props: {
         duration: 1,
         delay: props.isLargeDevice ? props.index * 0.2 : 0,
       }}
-      viewport={{ once: true }}
       className={ax["digits_item"]}
       onViewportEnter={() => setIsInview(true)}
     >
@@ -43,7 +42,6 @@ const DigitItem = (props: {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
         transition={{ duration: 0.5, delay: props.isLargeDevice ? 1 : 0 }}
         className={ax["digits_item"]}
       >

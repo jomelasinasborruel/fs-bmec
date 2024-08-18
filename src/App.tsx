@@ -14,11 +14,12 @@ import ModalContactForm from "./components/Modal/ContactForm/ContactForm";
 import { Snackbar } from "@mui/material";
 import smoothscroll from "smoothscroll-polyfill";
 import zenscroll from "zenscroll";
+import ClientReviews from "./components/ClientReviews";
 
 const ANCHRORS = [
   { label: "About Us", key: "about" },
   { label: "Services", key: "services" },
-  { label: "Testimonies", key: "" },
+  { label: "Reviews", key: "reviews" },
   { label: "Contact Us", key: "contactForm" },
 ];
 
@@ -187,6 +188,7 @@ function App() {
       <About />
       <Members />
       <Services />
+      <ClientReviews />
     </div>
   );
 }

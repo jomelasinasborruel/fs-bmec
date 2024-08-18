@@ -1,6 +1,6 @@
 .services {
   &_wrapper {
-    @apply px-4 flex lg:flex-row mb-20 flex-col overflow-hidden justify-center relative items-center pb-10;
+    @apply px-4 flex lg:flex-row mb-10 lg:mb-[3.75rem] flex-col overflow-hidden justify-center relative items-center pb-10;
 
     @screen md {
       @apply px-6;

@@ -1,0 +1,38 @@
+.review {
+  &_wrapper {
+    @apply relative;
+  }
+
+  &_container {
+    @apply px-4 grid overflow-hidden justify-center items-center py-20 relative gap-y-10 lg:gap-y-[6.25rem];
+
+    &::after {
+      @apply content-[''] block absolute size-full top-0 left-0 bg-[#ffffff8c];
+    }
+
+    @screen md {
+      @apply px-6;
+    }
+
+    @screen lg {
+      @apply px-8 py-20;
+    }
+  }
+
+  &_title-container {
+    @apply px-4 flex overflow-hidden justify-center items-center relative py-10;
+
+    @screen md {
+      @apply px-6;
+    }
+
+    @screen lg {
+      @apply px-8 py-[3.75rem];
+    }
+  }
+
+  &_content {
+    @apply max-w-[90rem] w-full items-center relative text-center
+     justify-center flex text-black z-10 self-start;
+  }
+}

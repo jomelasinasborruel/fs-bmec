@@ -7,12 +7,11 @@ const About = () => {
       <div id="about" className="absolute -top-24 left-0" />
       <div className={ax["about_content"]}>
         <motion.div
-          initial={{ opacity: 0, x: -300, y: 200 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          initial={{ opacity: 0, x: -300 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{
             duration: 1,
           }}
-          viewport={{ once: true }}
           className={ax["about_text-wrapper"]}
         >
           <p className={ax["about_title"]}>
@@ -44,7 +43,6 @@ const About = () => {
         transition={{
           duration: 1,
         }}
-        viewport={{ once: true }}
         className={ax["about_image-container"]}
       >
         <img src="https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1000/v1/fs-bmec/wwhidsq7xyxsv5oc249f" />

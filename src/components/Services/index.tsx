@@ -14,7 +14,6 @@ const Services = () => {
           transition={{
             duration: 1,
           }}
-          viewport={{ once: true }}
           className={ax["services_text-wrapper"]}
         >
           <p className={ax["services_title"]}>
@@ -29,7 +28,6 @@ const Services = () => {
                 transition={{
                   duration: 1,
                 }}
-                viewport={{ once: true }}
               >
                 {item.service}
               </motion.li>
@@ -43,7 +41,6 @@ const Services = () => {
         transition={{
           duration: 1,
         }}
-        viewport={{ once: true }}
         className={ax["services_image-container"]}
       >
         <img src="https://res.cloudinary.com/jmcloudname/image/upload/c_scale,w_1000/v1/fs-bmec/mptd2wbbtuzcwuvxzjkd" />

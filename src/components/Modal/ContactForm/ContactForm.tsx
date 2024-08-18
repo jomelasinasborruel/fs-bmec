@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { useForm, FieldError } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { RxCross1 } from "react-icons/rx";
 
 const schema = yup
   .object()
@@ -66,7 +67,7 @@ const ModalContactForm = ({
   return (
     <Modal
       id="modal-wrapper"
-      className="pb-10 pt-20 px-4 justify-center  flex overflow-auto"
+      className="pb-10 pt-20 px-4 justify-center flex overflow-auto"
       open={open}
       onClose={handleClose}
       disableAutoFocus
@@ -74,7 +75,7 @@ const ModalContactForm = ({
       <Fade in={open}>
         <Box className={ax["contact-form_wrapper"]}>
           <button onClick={handleClose} className={ax["btn-close"]}>
-            🞢
+            {<RxCross1 />}
           </button>
           <div className={ax["contact-form_header"]}>
             <img
@@ -86,8 +87,8 @@ const ModalContactForm = ({
               forti<span className="text-white">serv</span>
             </p>
           </div>
-          <div className="py-10 px-8">
-            <p className="mb-4 text-4xl font-lato font-bold text-[#1b1b1b]">
+          <div className="py-12 px-10">
+            <p className="mb-4 text-4xl font-caviarDreams font-bold text-[#1b1b1b]">
               How can we be of <span className="text-primary">service?</span>
             </p>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -105,7 +106,7 @@ const ModalContactForm = ({
                   {...register("email")}
                 />
               </div>
-              <div className="mt-8">
+              <div className="mt-6">
                 <InputTextArea
                   label={"Message"}
                   value={watch("message")}
@@ -115,7 +116,7 @@ const ModalContactForm = ({
               </div>
               <input
                 type="submit"
-                value={"Send"}
+                value={"SEND"}
                 className={ax["btn-submit"]}
               />
             </form>
@@ -156,7 +157,7 @@ const InputText = React.forwardRef<
       >
         <label
           className={clsx(
-            "px-1 bg-white absolute left-[10px] top-[9px] transition-all duration-300 text-xl pointer-events-none",
+            "px-1 bg-white absolute left-[10px] top-[9px] transition-all duration-300 text-xl pointer-events-none rounded-md",
             {
               "!-top-[0.8125rem] !left-4 text-sm text-[#00a74eaf]":
                 isFocus || inputVal,
@@ -173,7 +174,9 @@ const InputText = React.forwardRef<
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
         />
-        <span className="text-red-800 text-sm">{error?.message}</span>
+        <p className="text-red-800 text-xs mt-1 font-medium">
+          {error?.message}
+        </p>
       </div>
     </>
   );
@@ -202,7 +205,7 @@ const InputTextArea = React.forwardRef<
     >
       <label
         className={clsx(
-          "px-1 bg-white absolute left-[10px] top-[9px] transition-all duration-300 text-xl pointer-events-none",
+          "px-1 bg-white absolute left-[10px] top-[9px] transition-all duration-300 text-xl pointer-events-none rounded-md",
           {
             "!-top-[0.8125rem] !left-4 text-sm text-[#00a74eaf]":
               isFocus || inputVal,
@@ -218,7 +221,9 @@ const InputTextArea = React.forwardRef<
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
       />
-      <span className="text-red-800 text-sm">{error?.message}</span>
+      <p className="text-red-800 text-xs font-medium mt-[-0.125rem]">
+        {error?.message}
+      </p>
     </div>
   );
 });

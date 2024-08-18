@@ -3,7 +3,7 @@
     @apply bg-white relative w-[90vw] max-w-[43.75rem] h-fit my-auto rounded-xl overflow-hidden;
 
     .btn-close {
-      @apply rotate-45 block text-white absolute top-3 right-5 text-3xl z-10 font-lato font-light;
+      @apply block text-white absolute top-3 right-5 text-3xl z-10 font-lato font-light;
     }
 
     .overlay {
@@ -11,7 +11,7 @@
     }
 
     .btn-submit {
-      @apply mt-10 py-3 px-10 block rounded-md transition-colors duration-200 mx-auto cursor-pointer bg-primary text-white hover:text-black hover:bg-[#cccccc];
+      @apply mt-10 py-3 px-10 block rounded-md transition-colors text-lg duration-200 mx-auto cursor-pointer bg-primary text-white hover:text-black hover:bg-[#cccccc];
     }
 
     .input-group {
@@ -32,12 +32,12 @@
 
 .inputText {
   &_wrapper {
-    @apply w-full h-[3.125rem] border border-[#00000079] relative rounded-md transition-colors duration-200;
+    @apply w-full h-[3.125rem] font-lato border font-light border-[#00000079] relative rounded-md transition-colors duration-200;
   }
 }
 
 .inputTextArea {
   &_wrapper {
-    @apply w-full h-[150px] border border-[#00000079] relative rounded-md transition-colors duration-200;
+    @apply w-full h-[150px] font-lato border font-light border-[#00000079] relative rounded-md transition-colors duration-200;
   }
 }
