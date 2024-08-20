@@ -106,7 +106,7 @@ const Banner = () => {
         >
           <div className="relative text-center">
             Business <span>Management</span>
-            <div className={clsx(ax["banner_tagline"], "text-black")}>
+            <div className={clsx(ax["banner_tagline"], "mx-2")}>
               Enterprise Co.
             </div>
           </div>
