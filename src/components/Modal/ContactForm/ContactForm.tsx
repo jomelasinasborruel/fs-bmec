@@ -46,23 +46,22 @@ const ModalContactForm = ({
 
   // useEffect(() => {docu}, []);
 
-  const onSubmit = () =>
-    //   e: {
-    //   name?: string | undefined;
-    //   message?: string | undefined;
-    //   email: string;
-    // }
-    {
-      onEmailSend("error");
-      handleClose();
-      // fetch("http://localhost:3000/mailer/send-sample", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(e),
-      // })
-      //   .then((e) => e.json())
-      //   .then((e) => console.log(e));
-    };
+  const onSubmit = (e: {
+    name?: string | undefined;
+    message?: string | undefined;
+    email: string;
+  }) => {
+    fetch("https://seven-server-fp4c.onrender.com/mailer/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(e),
+    })
+      .then((e) => e.json())
+      .then((e) => {
+        onEmailSend(e.success === true ? "sent" : "error");
+        handleClose();
+      });
+  };
 
   return (
     <Modal

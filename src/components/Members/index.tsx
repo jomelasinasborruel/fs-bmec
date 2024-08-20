@@ -1,14 +1,11 @@
 import ax from "./Component.module.scss";
-
-import Marquee from "react-fast-marquee";
-import clsx from "clsx";
-import { useState } from "react";
 import membersDetail from "./membersDetail.json";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const Members = () => {
-  const [play, setPlay] = useState(true);
-
   return (
     <motion.div
       id="members"
@@ -17,27 +14,39 @@ const Members = () => {
       transition={{ duration: 1 }}
       className={ax["members_wrapper"]}
     >
-      <Marquee autoFill play={play} className={clsx("w-full")} speed={20}>
+      <Swiper
+        loop
+        className={"w-full"}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          reverseDirection: false,
+        }}
+        slidesPerView={"auto"}
+        speed={8000}
+        onInit={(e) => (e.wrapperEl.style.transitionTimingFunction = "linear")}
+      >
         {membersDetail.map((member, index) => (
-          <div
-            key={member.src + String(index)}
-            onMouseEnter={() => setPlay(false)}
-            onMouseLeave={() => setPlay(true)}
-            className="relative mx-2 cursor-grabbing"
-          >
-            <div className={ax["members_item"]}>
-              <div className={ax["members_image-wrapper"]}>
-                <img src={member.src} alt="member-photo" />
+          <SwiperSlide className="w-fit">
+            <div
+              key={member.src + String(index)}
+              className="relative mx-2 cursor-grabbing w-fit"
+            >
+              <div className={ax["members_item"]}>
+                <div className={ax["members_image-wrapper"]}>
+                  <img src={member.src} alt="member-photo" />
+                </div>
               </div>
-            </div>
-            <div className={ax["members_overlay"]} />
-            <div className={ax["members_item-details"]}>
-              <p>{member.name}</p>
-              <p>{member.position}</p>
-            </div>
-          </div>
+              <div className={ax["members_overlay"]} />
+              <div className={ax["members_item-details"]}>
+                <p>{member.name}</p>
+                <p>{member.position}</p>
+              </div>
+            </div>{" "}
+          </SwiperSlide>
         ))}
-      </Marquee>
+      </Swiper>
     </motion.div>
   );
 };
