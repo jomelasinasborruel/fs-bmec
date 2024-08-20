@@ -48,7 +48,7 @@ const ModalContactForm = ({
   };
 
   const onSubmit = async (e: FormSchema) => {
-    fetch(`https://seven-server-fp4c.onrender.com/mailer/send`, {
+    fetch(`${import.meta.env.VITE_END_POINT}/mailer/send`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(e),
