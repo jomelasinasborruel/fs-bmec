@@ -4,7 +4,7 @@
   }
 
   &_container {
-    @apply bg-white relative w-[90vw] max-w-[43.75rem] shadow-2xl h-fit my-auto rounded-xl overflow-hidden z-[100];
+    @apply bg-white relative w-[90vw] max-w-[43.75rem] shadow-2xl h-fit my-auto rounded-xl overflow-hidden;
 
     .btn-close {
       @apply block text-white absolute top-3 right-5 text-3xl z-10 font-lato font-light;
