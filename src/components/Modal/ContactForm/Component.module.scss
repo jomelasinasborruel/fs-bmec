@@ -1,3 +1,7 @@
+.modal-wrapper {
+  @apply pb-10 pt-20 px-4 justify-center flex overflow-auto;
+}
+
 .contact-form {
   &_wrapper {
     @apply bg-white relative w-[90vw] max-w-[43.75rem] h-fit my-auto rounded-xl overflow-hidden;
@@ -11,7 +15,7 @@
     }
 
     .btn-submit {
-      @apply mt-10 py-3 px-10 block rounded-md transition-colors text-lg duration-200 mx-auto cursor-pointer bg-primary text-white hover:text-black hover:bg-[#cccccc];
+      @apply mt-7 py-3 px-10 block rounded-md transition-colors text-lg duration-200 mx-auto cursor-pointer bg-primary text-white hover:text-black hover:bg-[#cccccc];
     }
 
     .input-group {
@@ -28,6 +32,13 @@
       @apply font-terminatorTwo relative text-primary text-3xl tracking-wide;
     }
   }
+
+  &_textContainer {
+    @apply py-12 md:px-10 px-4;
+    & > p {
+      @apply mb-4 text-4xl font-caviarDreams font-bold text-[#1b1b1b];
+    }
+  }
 }
 
 .inputText {
@@ -39,5 +50,19 @@
 .inputTextArea {
   &_wrapper {
     @apply w-full h-[150px] font-lato border font-light border-[#00000079] relative rounded-md transition-colors duration-200;
+    /* width */
+    textarea::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    textarea::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    textarea::-webkit-scrollbar-thumb {
+      background: #888;
+    }
   }
 }

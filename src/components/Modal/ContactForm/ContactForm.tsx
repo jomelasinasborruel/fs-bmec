@@ -7,8 +7,9 @@ import { useForm, FieldError } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { RxCross1 } from "react-icons/rx";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-const schema = yup
+export const schema = yup
   .object()
   .shape({
     name: yup.string().min(2, "Please enter a valid name."),
@@ -19,6 +20,8 @@ const schema = yup
     message: yup.string().min(2, "Please enter at least 50 characters."),
   })
   .required();
+
+export type FormSchema = yup.InferType<typeof schema>;
 
 const ModalContactForm = ({
   open,
@@ -34,7 +37,7 @@ const ModalContactForm = ({
     watch,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isLoading },
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -44,14 +47,8 @@ const ModalContactForm = ({
     reset();
   };
 
-  // useEffect(() => {docu}, []);
-
-  const onSubmit = (e: {
-    name?: string | undefined;
-    message?: string | undefined;
-    email: string;
-  }) => {
-    fetch("https://seven-server-fp4c.onrender.com/mailer/send", {
+  const onSubmit = async (e: FormSchema) => {
+    fetch(`${import.meta.env.VITE_END_POINT}/mailer/send`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(e),
@@ -60,16 +57,21 @@ const ModalContactForm = ({
       .then((e) => {
         onEmailSend(e.success === true ? "sent" : "error");
         handleClose();
+      })
+      .catch(() => {
+        onEmailSend("error");
+        handleClose();
       });
   };
 
   return (
     <Modal
       id="modal-wrapper"
-      className="pb-10 pt-20 px-4 justify-center flex overflow-auto"
+      className={clsx(ax["modal-wrapper"], {
+        "pointer-events-none": isLoading,
+      })}
       open={open}
       onClose={handleClose}
-      disableAutoFocus
     >
       <Fade in={open}>
         <Box className={ax["contact-form_wrapper"]}>
@@ -86,9 +88,9 @@ const ModalContactForm = ({
               forti<span className="text-white">serv</span>
             </p>
           </div>
-          <div className="py-12 px-10">
-            <p className="mb-4 text-4xl font-caviarDreams font-bold text-[#1b1b1b]">
-              How can we be of <span className="text-primary">service?</span>
+          <div className={ax["contact-form_textContainer"]}>
+            <p>
+              Let's Get<span className="text-primary"> In Touch!</span>
             </p>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className={ax["input-group"]}>
@@ -113,11 +115,18 @@ const ModalContactForm = ({
                   {...register("message")}
                 />
               </div>
-              <input
+              <button
                 type="submit"
-                value={"SEND"}
-                className={ax["btn-submit"]}
-              />
+                className={clsx(ax["btn-submit"], {
+                  "pointer-events-none bg-gray-500": isLoading,
+                })}
+              >
+                {isLoading ? (
+                  <AiOutlineLoading3Quarters className="animate-spin" />
+                ) : (
+                  "SUBMIT"
+                )}
+              </button>
             </form>
           </div>
         </Box>
@@ -132,7 +141,7 @@ interface InputProps {
   error?: FieldError;
 }
 
-const InputText = React.forwardRef<
+export const InputText = React.forwardRef<
   HTMLInputElement,
   React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
@@ -181,7 +190,7 @@ const InputText = React.forwardRef<
   );
 });
 
-const InputTextArea = React.forwardRef<
+export const InputTextArea = React.forwardRef<
   HTMLTextAreaElement,
   React.DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLTextAreaElement>,

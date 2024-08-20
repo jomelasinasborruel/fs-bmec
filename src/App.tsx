@@ -16,6 +16,7 @@ import smoothscroll from "smoothscroll-polyfill";
 import zenscroll from "zenscroll";
 import ClientReviews from "./components/ClientReviews";
 import { FaFacebookMessenger } from "react-icons/fa";
+import ContactForm from "./components/ContactForm";
 const ANCHRORS = [
   { label: "About Us", key: "about" },
   { label: "Services", key: "services" },
@@ -33,6 +34,7 @@ function App() {
   const handleLinks = (id: string) => {
     if (id === "contactForm") {
       setToggleModal(true);
+      return;
     }
 
     const element = document.getElementById(id);
@@ -202,6 +204,11 @@ function App() {
       <Members />
       <Services />
       <ClientReviews />
+      <ContactForm
+        onEmailSend={(e) => {
+          setToggleSnackBar(e);
+        }}
+      />
     </div>
   );
 }
