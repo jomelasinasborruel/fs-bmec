@@ -12,6 +12,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { FaFacebook, FaPhone } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
+import Meteors from "../Meteors";
 
 const socialMedia = [
   {
@@ -73,11 +74,12 @@ const ContactForm = ({
   return (
     <div>
       <div className={ax["contact-form_wrapper"]}>
+        <Meteors />
         <div id="contactForm" className="absolute -top-20 left-0" />
         <motion.div
           initial={{ y: 300 }}
           whileInView={{ y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           className={ax["contact-form_container"]}
         >
           <div className={ax["contact-form_textContainer"]}>
